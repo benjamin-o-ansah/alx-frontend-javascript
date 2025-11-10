@@ -73,10 +73,13 @@ const director3: Director = {
 
 console.log(director1, director2, director3);
 
-
-function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string{
-    firstName = firstName.charAt(0).toUpperCase()
-    return `${firstName}. ${lastName}`;
+interface printTeacherFunction {
+  (firstName: string, lastName: string): string;
 }
 
-console.log(printTeacher({firstName:"John", lastName:"Doe"}));
+const printTeacher: printTeacherFunction = function (firstName, lastName) {
+  return `${firstName.charAt(0).toUpperCase()}. ${lastName}`;
+};
+
+
+console.log(printTeacher("John","Doe"));
