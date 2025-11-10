@@ -75,7 +75,8 @@ console.log(director1, director2, director3);
 
 
 function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string{
-return `${firstName.charAt(0)}. ${lastName}`;
+    firstName = firstName.charAt(0).toUpperCase()
+    return `${firstName}. ${lastName}`;
 }
 
 console.log(printTeacher({firstName:"John", lastName:"Doe"}));
