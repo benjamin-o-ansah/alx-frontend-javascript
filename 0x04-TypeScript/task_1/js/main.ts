@@ -76,10 +76,17 @@ console.log(director1, director2, director3);
 interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string{
+    firstName = firstName.charAt(0).toUpperCase() 
+    return `${firstName}. ${lastName}`; 
+    } 
+console.log(printTeacher({firstName:"John", lastName:"Doe"}));
 
-const printTeacher: printTeacherFunction = function (firstName, lastName) {
-  return `${firstName.charAt(0).toUpperCase()}. ${lastName}`;
-};
 
 
-console.log(printTeacher("John","Doe"));
+// const printTeacher: printTeacherFunction = function (firstName, lastName) {
+//   return `${firstName.charAt(0).toUpperCase()}. ${lastName}`;
+// };
+
+
+console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
