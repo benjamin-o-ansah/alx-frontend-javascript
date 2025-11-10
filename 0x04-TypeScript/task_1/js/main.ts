@@ -74,9 +74,8 @@ const director3: Director = {
 console.log(director1, director2, director3);
 
 
-function printTeacher(firstName: string, lastName: string) {
-  return `${firstName.charAt(0)}. ${lastName}`;
-
+function printTeacher({ firstName, lastName }: { firstName: string; lastName: string }): string{
+return `${firstName.charAt(0)}. ${lastName}`;
 }
 
-console.log(printTeacher("John", "Doe"));
+console.log(printTeacher({firstName:"John", lastName:"Doe"}));
