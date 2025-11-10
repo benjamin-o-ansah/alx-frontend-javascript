@@ -1,0 +1,1 @@
+# This is a README document for practicing typescript
