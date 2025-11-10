@@ -90,3 +90,35 @@ console.log(printTeacher({firstName:"John", lastName:"Doe"}));
 
 
 console.log(printTeacher({ firstName: "John", lastName: "Doe" }));
+
+
+interface StudentClassConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+// Interface describing the class
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+
+class StudentClass implements StudentClassInterface {
+
+ constructor (public firstName: string,public lastName: string){
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+
+    workOnHomework(): string{
+        return `Currently working`;
+    }
+
+    displayName(): string{
+        return this.firstName;
+    }
+}
+
+const student = new StudentClass("John", "Doe");
+console.log(student.displayName()); // Output: John
+console.log(student.workOnHomework());
